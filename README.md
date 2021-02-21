@@ -15,27 +15,27 @@ For constructing our Neural Network architectures we use the MLP ML Framework, s
 We first train a shallow VGG model of 8 layers without residual connections nor batch normalization, and check how the gradient flow behaves through the network. Since the network is indeed shallow, it will not present the vanishing/exploding gradient. The gradient flow for this network is shown in the following plot.
 
 <p align="center">
-<img  src="Figures/VGG08_gradflow.png">
+<img  src="Figures/VGG08_gradflow.png" width="100">
 </p>
 
 However, once we increase the model size to 38 layers, a clear sign of vanishing gradient is found, as shown below.
 
 <p align="center">
-<img  src="Figures/VGG38_gradflow.png">
+<img  src="Figures/VGG38_gradflow.png" width="100">
 </p>
 
 We then modify our VGG archtecture to include skip connections between convolutional layers, and we apply batch normalization to the output of each convolutional layer, which control the gradient flow and prevent it from vanishin or exploding. The gradient flow for the ResNet VGG38 network with Batch Normalization is shown below.
 
 <p align="center">
-<img  src="Figures/VGG38_ResNet_gradflow.png">
+<img  src="Figures/VGG38_ResNet_gradflow.png" width="100">
 </p>
 
 With this final architecture we perform a hyperparameter search to test the efficacy of the implemented solution, we go as far as training deeper models, and all of them continue learning, as shown below.
 
 <p align="center">
-<img  src="Figures/exp_set_7_acc_performance.png">
+<img  src="Figures/exp_set_7_acc_performance.png" width="100">
 </p>
 
 <p align="center">
-<img  src="Figures/exp_set_7_loss_performance.png">
+<img  src="Figures/exp_set_7_loss_performance.png" width="100">
 </p>
