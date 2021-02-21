@@ -33,9 +33,9 @@ We then modify our VGG archtecture to include skip connections between convoluti
 With this final architecture we perform a hyperparameter search to test the efficacy of the implemented solution, we go as far as training deeper models, and all of them continue learning, as shown below.
 
 <p align="center">
-<img  src="Training-Results-Visualizer_files/exp_set_7_acc_performance.png">
+<img  src="Figures/exp_set_7_acc_performance.png">
 </p>
 
 <p align="center">
-<img  src="Training-Results-Visualizer_files/exp_set_7_loss_performance.png">
+<img  src="Figures/exp_set_7_loss_performance.png">
 </p>
