@@ -9,7 +9,7 @@ For constructing our Neural Network architectures we use the MLP ML Framework, s
 
 ## Structure of the post
   - [ResNets_on_VGG_Architecture_for_CIFAR100.pdf]((https://github.com/federicoarenasl/Optmizing-CNNs-w-ResNets/blob/main/ResNets_on_VGG_Architecture%20_for_CIFAR100.pdf)): This file represents the main file of the post, and we strongly encourage the reader to start by giving it a quick read to understand the project better. If the reader is still curios as to _how_ the results in the study were obtained, we encourage the reader to checkout the next two files.
-  - ResNet-VGG0-on-CIFAR100.md : this file, accompanied by its ```.ipynb``` version in the ```Notebooks``` folder, will walk the reader through the bulding of the the building of the CNN blocks with residual connections and batch normalization. It will also walk the reader through the visualization of the results from all experiments done to search the hyperparameter space to reach the best model.
+  - ResNet-VGG0-on-CIFAR100.md : this file, accompanied by its ```.ipynb``` version in the ```Notebooks``` folder, will walk the reader through the building of the CNN blocks with residual connections and batch normalization. It will also walk the reader through the visualization of the results from all experiments done to search the hyperparameter space to reach the best model.
  
  ## A sneak peak at some results
 We first train a shallow VGG model of 8 layers without residual connections nor batch normalization, and check how the gradient flow behaves through the network. Since the network is indeed shallow, it will not present the vanishing/exploding gradient. The gradient flow for this network is shown in the following plot.
