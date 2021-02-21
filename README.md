@@ -8,7 +8,7 @@ We now focus on extensively testing the effcacy of our solution for multiple hyp
 For constructing our Neural Network architectures we use the MLP ML Framework, since this study was done within the context of the Machine Learning Practical Course at the University of Edinburgh. The framework is not made available due to school licensing purposes.
 
 ## Structure of the post
-  - [ResNets_on_VGG_Architecture_for_CIFAR100.pdf]((https://github.com/federicoarenasl/Optmizing-CNNs-w-ResNets/blob/main/ResNets_on_VGG_Architecture%20_for_CIFAR100.pdf)): This file represents the main file of the post, and we strongly encourage the reader to start by giving it a quick read to understand the project better. If the reader is still curios as to _how_ the results in the study were obtained, we encourage the reader to checkout the next two files.
+  - [ResNets_on_VGG_Architecture_for_CIFAR100.pdf](https://github.com/federicoarenasl/Optmizing-CNNs-w-ResNets/blob/main/ResNets_on_VGG_Architecture_for_CIFAR100.pdf): This file represents the main file of the post, and we strongly encourage the reader to start by giving it a quick read to understand the project better. If the reader is still curios as to _how_ the results in the study were obtained, we encourage the reader to checkout the next two files.
   - ResNet-VGG0-on-CIFAR100.md : this file, accompanied by its ```.ipynb``` version in the ```Notebooks``` folder, will walk the reader through the building of the CNN blocks with residual connections and batch normalization. It will also walk the reader through the visualization of the results from all experiments done to search the hyperparameter space to reach the best model.
  
  ## A sneak peak at some results
