@@ -9,21 +9,30 @@ For constructing our Neural Network architectures we use the MLP ML Framework, s
 
 ## Structure of the post
   - [ResNets_on_VGG_Architecture_for_CIFAR100.pdf]((https://github.com/federicoarenasl/Optmizing-CNNs-w-ResNets/blob/main/ResNets_on_VGG_Architecture%20_for_CIFAR100.pdf)): This file represents the main file of the post, and we strongly encourage the reader to start by giving it a quick read to understand the project better. If the reader is still curios as to _how_ the results in the study were obtained, we encourage the reader to checkout the next two files.
-  - Training-w-mlp-framework.md : this file, accompanied by its ```.ipynb``` version in the ```notebooks``` folder, will walk the reader through the bulding of the Neural Network architectures and the training of these networks with Dropout, L1 Regularisation, and L2 Regularisation. It will also include the hyperparameter search for the best model, and the training and testing of it.
-  - Training-Results-Visualizer.mp : this file, accompanied by its ```.ipynb``` version in the ```notebooks``` folder, will go through the plotting and brief analysis of the training results, as well as reporting the test results from the last best model.
+  - ResNet-VGG0-on-CIFAR100.md : this file, accompanied by its ```.ipynb``` version in the ```Notebooks``` folder, will walk the reader through the bulding of the the building of the CNN blocks with residual connections and batch normalization. It will also walk the reader through the visualization of the results from all experiments done to search the hyperparameter space to reach the best model.
  
  ## A sneak peak at some results
-Our first network, purposedly designed to show bad generalization performance is a Network for 100 Epochs, using Stocahstic Gradient Descent and Adam optimizer with a mini-batch size of 100, with one Affine Layer composed of 100 Hidden Units followed by a ReLu non-linearity, with learnng rate of 0.001 and all biases and weights initialised to 0. The generalization problem is evident as illustrated by the following figure.
+We first train a shallow VGG model of 8 layers without residual connections nor batch normalization, and check how the gradient flow behaves through the network. Since the network is indeed shallow, it will not present the vanishing/exploding gradient. The gradient flow for this network is shown in the following plot.
 
 <p align="center">
-<img  src="Training-Results-Visualizer_files/Training-Results-Visualizer_8_0.png">
+<img  src="Figures/VGG08_gradflow.pdf">
 </p>
 
-After a thorough hyperparameter search, we are able to find a model that, solely with regularisation, (1) greatly lower the Train/Test Error Gap from a 1.42 to a 0.13 Gap. Lower the Train/Test Accuracy Gap which went from a 14% to a 3.57% Accuracy Gap. Additionally, (2) we were able to increase the Test Accuracy from 81.4% to 84.03%. The Final Model is able to stably converge to a local minimum after 15 Epochs of training:
+However, once we increase the model size to 38 layers, a clear sign of vanishing gradient is found, as shown below.
 
 <p align="center">
-<img  src="Training-Results-Visualizer_files/Training-Results-Visualizer_74_0.png">
+<img  src="Figures/VGG38_gradflow.pdf">
 </p>
 
+We then modify our VGG archtecture to include skip connections between convolutional layers, and we apply batch normalization to the output of each convolutional layer, which control the gradient flow and prevent it from vanishin or exploding. The gradient flow for the ResNet VGG38 network with Batch Normalization is shown below.
 
+<p align="center">
+<img  src="Figures/VGG38_ResNet_gradflow.pdf.png">
+</p>
 
+With this final architecture we perform a hyperparameter search to test the efficacy of the implemented solution, we go as far as training deeper models, and all of them continue learning, as shown below.
+
+<p align="center">
+<img  src="Training-Results-Visualizer_files/exp_set_7_acc_performance.pdf.png">
+<img  src="Training-Results-Visualizer_files/exp_set_7_loss_performance.pdf.png">
+</p>
